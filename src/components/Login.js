@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Redirect after login
-import { loginUser } from "../services/api"; // API call
+import { getUser, loginUser } from "../services/api"; // API call
 import { Button, TextField, Paper, Typography } from "@mui/material";
 
 const Login = () => {

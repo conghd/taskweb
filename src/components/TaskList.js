@@ -23,6 +23,7 @@ import {
   DialogActions,
 } from "@mui/material";
 
+import { useNavigate } from "react-router-dom";
 const statusColors = {
   "To do": "warning",
   "In progress": "info",
@@ -37,8 +38,12 @@ const TaskList = () => {
   const [openDialog, setOpenDialog] = useState(false);
   const [newTask, setNewTask] = useState({ title: "", description: "" });
   const [totalTasks, setTotalTasks] = useState(0);
-
+  const navigate = useNavigate();
   const user = getUser();
+
+  if (!user) {
+    navigate("/");
+  }
 
   useEffect(() => {
     if (user) {

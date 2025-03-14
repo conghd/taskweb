@@ -21,7 +21,6 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("token");
-    setAnchorEl(null);
     navigate("/login"); // Redirect to login page
   };
 
